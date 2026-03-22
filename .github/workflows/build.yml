@@ -25,8 +25,8 @@ jobs:
 
       - name: Build morphium dependencies
         run: |
-          # Clone and install morphium (SNAPSHOT dependency)
-          git clone --depth 1 https://github.com/Bardioc1977/morphium.git /tmp/morphium
+          # Clone and install morphium from fork/develop (6.2.2-SNAPSHOT + registerTypeIds)
+          git clone --depth 1 --branch develop https://github.com/Bardioc1977/morphium.git /tmp/morphium
           cd /tmp/morphium
           mvn -B install -DskipTests -pl morphium-core -am
 
