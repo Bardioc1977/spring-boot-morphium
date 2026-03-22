@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.caluga</groupId>
+  <artifactId>spring-boot-morphium-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Spring Boot Morphium – Parent</name>
+  <description>Spring Boot integration for Morphium MongoDB ODM with Jakarta Data repository support</description>
+  <url>https://github.com/Bardioc1977/spring-boot-morphium</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>spring-boot-morphium-autoconfigure</module>
+    <module>spring-boot-morphium-starter</module>
+    <module>spring-boot-morphium-test</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring-boot.version>3.4.4</spring-boot.version>
+    <morphium.version>6.2.2-SNAPSHOT</morphium.version>
+    <morphium-jakarta-data.version>1.0.0-SNAPSHOT</morphium-jakarta-data.version>
+    <jakarta.data.version>1.0.0</jakarta.data.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>de.caluga</groupId>
+        <artifactId>morphium</artifactId>
+        <version>${morphium.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>de.caluga</groupId>
+        <artifactId>morphium-jakarta-data</artifactId>
+        <version>${morphium-jakarta-data.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.data</groupId>
+        <artifactId>jakarta.data-api</artifactId>
+        <version>${jakarta.data.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.classgraph</groupId>
+        <artifactId>classgraph</artifactId>
+        <version>4.8.184</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.12.1</version>
+          <configuration>
+            <release>${maven.compiler.release}</release>
+            <parameters>true</parameters>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.2.5</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
