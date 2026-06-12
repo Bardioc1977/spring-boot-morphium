@@ -32,7 +32,7 @@
     <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spring-boot.version>3.4.4</spring-boot.version>
-    <morphium.version>6.2.2-SNAPSHOT</morphium.version>
+    <morphium.version>6.2.4</morphium.version>
     <morphium-jakarta-data.version>1.0.0-SNAPSHOT</morphium-jakarta-data.version>
     <jakarta.data.version>1.0.0</jakarta.data.version>
   </properties>
