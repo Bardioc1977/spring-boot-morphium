@@ -33,7 +33,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spring-boot.version>3.4.4</spring-boot.version>
     <morphium.version>6.2.5-SNAPSHOT</morphium.version>
-    <morphium-jakarta-data.version>1.0.0-SNAPSHOT</morphium-jakarta-data.version>
+    <morphium-jakarta-data.version>1.1.0-SNAPSHOT</morphium-jakarta-data.version>
     <jakarta.data.version>1.0.0</jakarta.data.version>
   </properties>
 
