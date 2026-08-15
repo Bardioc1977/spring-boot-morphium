@@ -8,12 +8,12 @@
 | Feld | Wert |
 |---|---|
 | Letzte Aktualisierung | 2026-08-15 |
-| Aktualisiert von | Rettungsübernahme vor Löschung von `Bardioc1977/morphium-jakarta-data` und `Bardioc1977/quarkus-morphium` (beide obsolet: Inhalte sind in `sboesebeck/morphium` gemergt und selbst auf Central 6.3.1 veröffentlicht) |
-| Ablageort dieses Plans | `Bardioc1977/spring-boot-morphium`, Verzeichnis `docs/plans/morphium-module-integration/` (übernommen aus dem gelöschten Repo `morphium-jakarta-data`, Branch `move-to-morphium`, unverändert bis auf dieses Feld und die beiden folgenden) |
-| **Aktuelle Welle** | **M4 gemergt (PR #267, `a8d7d8e1b`, 2026-08-07); M5 fork-seitig abgeschlossen inkl. Fixes — der PR-267-Blocker ist damit aufgehoben, der Cherry-Pick-Rebase für den M5-Upstream-PR kann jetzt ausgeführt werden** |
-| Aktueller Task | Cherry-Pick-Rebase für M5-Upstream-PR (siehe Abschnitt 9b) — noch nicht ausgeführt, war bis zur Rettungsübernahme extern blockiert |
-| Blocker | Keiner mehr. Ursprünglich: M5-Upstream-PR braucht denselben Rebase-Schritt wie M4 (Cherry-Pick statt normalem Rebase, da GitHub #266 als Squash-Merge gemergt hat — ein normaler `git rebase origin/develop` erzeugt Konflikte, weil die alten Einzel-Commits nicht mehr git-kompatibel mit dem Squash-Commit sind). Bedingung "muss warten, bis #267 gemergt ist" ist erfüllt: #267 wurde am 2026-08-07 gemergt. |
-| Nächste Aktion | `pr/spring-boot-module` per Cherry-Pick (NICHT `git rebase`) auf einen frischen Branch von `origin/develop` übertragen (siehe Vorgehen unten, Abschnitt 9), Diff verifizieren (`git diff --stat origin/develop -- morphium-core poppydb morphium-jakarta-data quarkus-morphium` MUSS leer sein), Upstream-PR-Text formulieren und vorlegen. |
+| Aktualisiert von | Orchestrator-Session, nach Erstellung des M5-Upstream-PRs |
+| Ablageort dieses Plans | `Bardioc1977/spring-boot-morphium`, Verzeichnis `docs/plans/morphium-module-integration/` (übernommen aus dem gelöschten Repo `morphium-jakarta-data`, Branch `move-to-morphium`) |
+| **Aktuelle Welle** | **M5 abgeschlossen: Upstream-PR #299 gegen `sboesebeck/morphium:develop` erstellt und offen (`Bardioc1977:pr/spring-boot-module`, mergeable)** |
+| Aktueller Task | keiner; wartet auf Stephans Review von PR #299 |
+| Blocker | Keiner. Cherry-Pick-Rebase (Abschnitt 9b) wurde ausgeführt: 6 M5-Commits auf frischen Branch von `origin/develop` (HEAD `0980ecf16`), plus 1 Zusatzcommit (4 POM-Parent-Versionen von `6.3.0-SNAPSHOT` auf das inzwischen aktuelle `6.3.2-SNAPSHOT` synchronisiert — der alte Branch war 184 Commits hinter `develop`). Diff-Check `git diff --stat origin/develop -- morphium-core poppydb morphium-jakarta-data quarkus-morphium` war leer, voller Reactor-Build gruen, 15/15 Tests gruen. |
+| Nächste Aktion | Auf Review/Feedback von Stephan zu PR #299 warten. |
 
 ---
 
